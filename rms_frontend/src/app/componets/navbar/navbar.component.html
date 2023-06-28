@@ -1,0 +1,59 @@
+<mat-toolbar  color="primary" style="background-color: rgb(14, 14, 14);">
+    <a
+      [routerLink]="'/'"
+      mat-icon-button
+      class="example-icon"
+      arial-label="Example icon-button with menu icon"
+    >
+      <mat-icon>shopping_bag</mat-icon>
+    </a>
+    <span>RioMagicStore</span>
+
+    <span class="example-spacer"></span>
+    <a
+      *ngIf="!login.isLoggedIn()"
+      [routerLink]="'/login'"
+      style="margin-right: 20px;"
+      style="color: rgb(57, 235, 13);"
+      class = "example-icon favorite-icon"
+      aria-label = "Example icon-button with heart icon"
+    >
+    <mat-icon>login</mat-icon>
+    Iniciar Sesión
+    </a>
+    <a
+      *ngIf="!login.isLoggedIn()"
+      [routerLink]="'/singup'"
+      style="margin-right: 20px;"
+      style="color: rgb(235, 169, 13);"
+      class="example-icon favorite-icon mr20 ml70"
+      aria-label="Example icon-button with heart icon"
+    >
+    <mat-icon>how_to_reg</mat-icon>
+    Registrar
+    </a>
+
+    <a
+      *ngIf="login.isLoggedIn()"
+      (click) = "logout()"
+      style="margin-left: 50px;"
+      style="color: rgb(230, 33, 33);"
+      class="example-icon favorite-icon mr20 ml70"
+      aria-label="Example icon-button with heart icon"
+    >
+    <mat-icon>logout</mat-icon>
+      Cerrar Session
+    </a>
+    <button
+      *ngIf="login.isLoggedIn()"
+      mat-button
+      style="margin-right: 20px;"
+      class="example-icon favorite-icon mr20 ml70"
+      aria-label="Example icon-button with heart icon"
+      routerLink="./admin/profile"
+    >
+    <mat-icon>person</mat-icon>
+      {{login.getUser().username}}
+    </button>
+    
+  </mat-toolbar>

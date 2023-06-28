@@ -1,0 +1,103 @@
+<mat-card>
+    <mat-action-list>
+      <div mat-subheader>Menu Administrador</div>
+
+      <button routerLink = "/admin" mat-list-item>
+        <mat-icon mat-list-icon>home</mat-icon> Inicio
+      </button>
+
+      <button mat-list-item routerLink = "/admin/profile">
+        <mat-icon mat-list-icon>account_circle</mat-icon> Perfil
+      </button>
+
+      <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true"(closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon mat-list-icon>store</mat-icon>Productos
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <button mat-list-item routerLink = "/admin/categorias">
+            <mat-icon mat-list-icon>list</mat-icon> Listar
+          </button>
+
+          <button mat-list-item routerLink = "/admin/categorias">
+            <mat-icon mat-list-icon>add_circle_outline</mat-icon>  Agregar
+          </button>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true"(closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon mat-list-icon>loyalty</mat-icon>Categorias
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <button mat-list-item routerLink = "/admin/categorias">
+            <mat-icon mat-list-icon>list</mat-icon> LISTAR
+          </button>
+
+          <button mat-list-item routerLink = "/admin/categorias">
+            <mat-icon mat-list-icon>add_circle_outline</mat-icon>  AGREGAR
+          </button>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true"(closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon mat-list-icon>task</mat-icon>Ordenes
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <button mat-list-item routerLink = "/admin/categorias">
+            <mat-icon mat-list-icon>list</mat-icon> LISTAR
+          </button>
+
+          <button mat-list-item routerLink = "/admin/categorias">
+            <mat-icon mat-list-icon>add_circle_outline</mat-icon>  AGREGAR
+          </button>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true"(closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon mat-list-icon>receipt_long</mat-icon>Facturas
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <button mat-list-item routerLink = "/admin/categorias">
+            <mat-icon mat-list-icon>list</mat-icon> LISTAR
+          </button>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true"(closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon mat-list-icon>recent_actors</mat-icon> Clientes
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <button mat-list-item routerLink = "/admin/categorias">
+            <mat-icon mat-list-icon>list</mat-icon> LISTAR
+          </button>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <button mat-list-item routerLink = "/admin/add-examen">
+      <!-- <button mat-list-item (click) = "logout()"> -->
+        <mat-icon mat-list-icon>logout</mat-icon>Salir
+      </button>
+
+    
+    </mat-action-list>
+  </mat-card>

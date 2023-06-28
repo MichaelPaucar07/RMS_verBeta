@@ -1,0 +1,51 @@
+<mat-card style="margin-left: 10px;">
+    <h1>Detalles del perfil</h1>
+    <mat-card-content>
+      <div class = "bootstrap-wrapper">
+        <div class = "container">
+          <div class = "text-center">
+            <img
+            src="../../../assets/administrator.png"
+            alt=""
+            class = "profile-image">
+  
+            <h1 class="mt20">{{user.nombres}} {{user.apellidos}}</h1>
+          </div>
+          <div class = "row">
+            <div class = "col-md-10 offset-md-1">
+              <table class = "table text-center">
+                <tr>
+                  <td><b>DNI:</b></td>
+                  <td>{{user.cedula}}</td>
+                </tr>
+                <tr>
+                  <td><b>USUARIO:</b></td>
+                  <td>{{user.username}}</td>
+                </tr>
+                <tr>
+                  <td><b>TELEFONO:</b></td>
+                  <td>{{user.telefono}}</td>
+                </tr>
+                <tr>
+                  <td><b>EMAIL:</b></td>
+                  <td>{{user.email}}</td>
+                </tr>
+                <tr>
+                  <td><b>ROL:</b></td>
+                  <td>{{user.authorities[0].authority }}</td>
+                </tr>
+                <tr>
+                  <td><b>ESTADO</b></td>
+                  <td>{{ user.enabled ? "Activo" : "No activo"}}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+        <mat-card-actions class = "button-math">
+            <button class="button-math" mat-raised-button color = "primary">Actualizar</button>
+            <button class="button-math" mat-raised-button color = "accent">Compartir</button>
+          </mat-card-actions>
+    </mat-card-content>
+  </mat-card>

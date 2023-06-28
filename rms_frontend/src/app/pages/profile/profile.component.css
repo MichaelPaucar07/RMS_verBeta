@@ -1,0 +1,27 @@
+.profile-image{
+    max-width: 150px;
+    max-height: 150px;
+    border: 2px solid rgb(179, 179, 179);
+    border-radius: 50%;
+    justify-content: center;
+}
+    
+.table{
+    width: 80%;
+    border-collapse: collapse;
+}
+  
+.table tr td{
+    padding: 15px 10px;
+    border: 0.5px solid gainsboro;
+}
+
+.button-math{
+    display: flex;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.button-math:last-child {
+    margin-right: 0;
+}
