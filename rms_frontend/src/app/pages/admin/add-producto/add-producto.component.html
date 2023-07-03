@@ -1,1 +1,61 @@
-<p>add-producto works!</p>
+<div class="container">
+    <h1>Agregar nuevo producto</h1>
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <form (ngSubmit)="guardarProducto()">
+            <div class="form-group mt-4">
+            <label for="nombre">Nombre</label>
+            
+            <input [(ngModel)]="productosData.nombre" type="text" class="form-control" id="nombre" name="nombre" required placeholder="Ingrese el nombre del producto">
+          </div>
+          <div class="form-group mt-4">
+            <label for="descripcion">Descripción</label>
+            <textarea [(ngModel)]="productosData.descripcion" class="form-control" id="descripcion" name="descripcion" placeholder="Ingrese la descripción del producto" rows="4"></textarea>
+          </div>
+          <div class="form-group mt-4">
+            <label for="cantidad_stock">Cantidad en stock</label>
+            <input [(ngModel)]="productosData.cantidad_stock" type="number" class="form-control" id="cantidad_stock" name="cantidad_stock" placeholder="Ingrese la cantidad en stock del producto">
+          </div>
+          <div class="form-group mt-4">
+            <label for="imagen">Imagen URL</label>
+            <input [(ngModel)]="productosData.imagen" type="text" class="form-control" id="imagen" name="imagen" (input)="mostrarPrevisualizacion()">
+          </div>
+  
+          <div class="d-flex justify-content-center align-items-center">
+            <div *ngIf="productosData.imagen" class="image-preview">
+              <img [src]="productosData.imagen" alt="Vista previa de la imagen" class="image-preview">
+            </div>
+          </div>
+          <div class="form-group mt-4">
+            <label for="estado">Estado</label>
+            <select [(ngModel)]="productosData.estado" class="form-control" id="estado" name="estado">
+              <option value="activo">Activo</option>
+              <option value="inactivo">Inactivo</option>
+            </select>
+          </div>
+          <div class="form-group mt-4">
+            <label for="precio">Precio</label>
+            <input [(ngModel)]="productosData.precio" type="number" class="form-control" id="precio" name="precio" placeholder="Ingrese el precio del producto">
+          </div>
+          <div class="form-group mt-4">
+            <label for="tipo">Tipo</label>
+            <select [(ngModel)]="productosData.tipo" class="form-control" id="tipo" name="tipo">
+              <option value="Yu-Gi-Oh!">Yu-Gi-Oh!</option>
+              <option value="Digimon">Digimon</option>
+            </select>
+          </div>
+          <div class="form-group mt-4">
+            <label for="categoria">Categorías</label>
+            <select [(ngModel)]="productosData.categoria.id_categoria" class="form-control" id="categoria" name="categoria">
+              <option *ngFor="let c of categorias" [value]="c.id_categoria">{{ c.nombre_categoria }}</option>
+            </select>
+          </div>
+          <div class="form-group mt-4">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </div>
+          <br>
+          <br>
+        </form>
+      </div>
+    </div>
+  </div>

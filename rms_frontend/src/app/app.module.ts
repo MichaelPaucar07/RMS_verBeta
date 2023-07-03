@@ -32,6 +32,7 @@ import { ViewCategoriasComponent } from './pages/admin/view-categorias/view-cate
 import { AddCategoriasComponent } from './pages/admin/add-categorias/add-categorias.component';
 import { ViewProductosComponent } from './pages/admin/view-productos/view-productos.component';
 import { AddProductoComponent } from './pages/admin/add-producto/add-producto.component';
+import { MatSelectModule } from '@angular/material/select';
 
 
 
@@ -67,7 +68,8 @@ import { AddProductoComponent } from './pages/admin/add-producto/add-producto.co
     MatCardModule,
     MatToolbarModule,
     MatListModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSelectModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

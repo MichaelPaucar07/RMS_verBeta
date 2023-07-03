@@ -15,13 +15,15 @@ export class AddProductoComponent implements OnInit {
   categorias:any = [];
 
   productosData = {
-    titulo:'',
+    nombre:'',
     descripcion:'',
-    puntosMaximos:'',
-    numeroDePreguntas:'',
-    activo:true,
+    cantidad_stock:'',
+    imagen:'',
+    estado:'',
+    precio:'',
+    tipo:'',
     categoria:{
-      categoriaId:''
+      id_categoria:''
     }
   }
 
@@ -43,35 +45,43 @@ export class AddProductoComponent implements OnInit {
     )
   }
 
-  // guardarCuestionario(){
-  //   console.log(this.examenData);
-  //   if(this.examenData.titulo.trim() == '' || this.examenData.titulo == null){
-  //     this.snack.open('El título es requerido','',{
-  //       duration:3000
-  //     });
-  //     return ;
-  //   }
+  guardarProducto(){
+    console.log(this.productosData);
+    if(this.productosData.nombre.trim() == '' || this.productosData.nombre == null){
+      this.snack.open('El nombre es requerido','',{
+        duration:3000
+      });
+      return ;
+    }
 
-  //   this.examenService.agregarExamen(this.examenData).subscribe(
-  //     (data) => {
-  //       console.log(data);
-  //       Swal.fire('Examen guardado','El examen ha sido guardado con éxito','success');
-  //       this.examenData = {
-  //         titulo : '',
-  //         descripcion : '',
-  //         puntosMaximos : '',
-  //         numeroDePreguntas : '',
-  //         activo:true,
-  //         categoria:{
-  //           categoriaId:''
-  //         }
-  //       }
-  //       this.router.navigate(['/admin/examenes']);
-  //     },
-  //     (error) => {
-  //       Swal.fire('Error','Error al guardar el examen','error');
-  //     }
-  //   )
-  // }
+    this.productoService.agregarProducto(this.productosData).subscribe(
+      (data) => {
+        console.log(data);
+        Swal.fire('producto guardado','El producto ha sido guardado con éxito','success');
+        this.productosData = {
+          nombre:'',
+          descripcion:'',
+          cantidad_stock:'',
+          imagen:'',
+          precio:'',
+          tipo:'',
+          estado:'',
+          categoria:{
+            id_categoria:''
+          }
 
+        }
+        this.router.navigate(['/admin/view-productos']);
+      },
+      (error) => {
+        Swal.fire('Error','Error al guardar el producto','error');
+      }
+    )
+    
+  }
+
+  mostrarPrevisualizacion() {
+    // Actualizar la vista previa de la imagen
+    this.productosData.imagen = this.productosData.imagen.trim();
+  }
 }
