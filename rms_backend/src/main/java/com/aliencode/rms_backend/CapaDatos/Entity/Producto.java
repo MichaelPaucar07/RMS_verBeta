@@ -1,142 +1,154 @@
-// package com.aliencode.rms_backend.CapaDatos.Entity;
+package com.aliencode.rms_backend.CapaDatos.Entity;
 
+import java.util.ArrayList;
 
-// import java.util.List;
-// import com.fasterxml.jackson.annotation.JsonIgnore;
-// import javax.persistence.*;
+import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import javax.persistence.*;
 
-// @Entity
-// @Table(name = "Producto")
-// public class Producto {
-//     @Id
-//     @GeneratedValue(strategy = GenerationType.IDENTITY)
-//     private int id_producto;
+@Entity
+@Table(name = "Producto")
+public class Producto {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id_producto;
 	
-//     @ManyToOne
-//     @JoinColumn(name = "id_categoria_producto", nullable =false)
-// 	private Categoria_producto categoria;
+    private String nombre;
+    private String tipo;
+    private String descripcion;
+    private String imagen;
+    private int cantidad_stock;
+    private float precio;
+    private String estado;
 
-//     @Column(name = "nombre", nullable = false , length = 50)
-//     private String nombre;
+    @ManyToOne
+    private Categoria categoria;
 
-// 	@Column(name = "tipo", nullable = false , length = 50)
-//     private String tipo;
-
-//     @Column(name = "descripcion", nullable = false , length = 100)
-//     private String descripcion;
-
-//     @Column(name = "imagen_producto", nullable = false )
-//     private String imagen_producto;
-
-//     @Column(name = "cantidad_stock", nullable = false)
-//     private int cantidad_stock;
-
-//     @Column(name = "precio", nullable = false)
-//     private float precio;
-// 	private boolean activo = false;
+	@OneToMany(mappedBy = "producto",cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Detalle_carrito> detalle_carritos = new ArrayList<>();
 	
-// 	@JsonIgnore
-// 	@OneToMany(mappedBy = "producto", cascade = CascadeType.ALL)
-//     private List<Articulo_carrito> articulo_carritos;
-	
-//     public Producto(){
 
-//     }
+    public Producto(){
 
-// 	public Producto(int id_producto, Categoria_producto categoria, String nombre, String tipo, String descripcion,
-// 			String imagen_producto, int cantidad_stock, float precio, boolean activo,
-// 			List<Articulo_carrito> articulo_carritos) {
-// 		this.id_producto = id_producto;
-// 		this.categoria = categoria;
-// 		this.nombre = nombre;
-// 		this.tipo = tipo;
-// 		this.descripcion = descripcion;
-// 		this.imagen_producto = imagen_producto;
-// 		this.cantidad_stock = cantidad_stock;
-// 		this.precio = precio;
-// 		this.activo = activo;
-// 		this.articulo_carritos = articulo_carritos;
-// 	}
+    }
 
-// 	public int getId_producto() {
-// 		return id_producto;
-// 	}
 
-// 	public void setId_producto(int id_producto) {
-// 		this.id_producto = id_producto;
-// 	}
+    public Producto(int id_producto, String nombre, String tipo, String descripcion, String imagen, int cantidad_stock,
+            float precio, String estado, Categoria categoria, List<Detalle_carrito> detalle_carritos) {
+        this.id_producto = id_producto;
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.descripcion = descripcion;
+        this.imagen = imagen;
+        this.cantidad_stock = cantidad_stock;
+        this.precio = precio;
+        this.estado = estado;
+        this.categoria = categoria;
+        this.detalle_carritos = detalle_carritos;
+    }
 
-// 	public Categoria_producto getCategoria() {
-// 		return categoria;
-// 	}
 
-// 	public void setCategoria(Categoria_producto categoria) {
-// 		this.categoria = categoria;
-// 	}
+    public int getId_producto() {
+        return id_producto;
+    }
 
-// 	public String getNombre() {
-// 		return nombre;
-// 	}
 
-// 	public void setNombre(String nombre) {
-// 		this.nombre = nombre;
-// 	}
+    public void setId_producto(int id_producto) {
+        this.id_producto = id_producto;
+    }
 
-// 	public String getTipo() {
-// 		return tipo;
-// 	}
 
-// 	public void setTipo(String tipo) {
-// 		this.tipo = tipo;
-// 	}
+    public String getNombre() {
+        return nombre;
+    }
 
-// 	public String getDescripcion() {
-// 		return descripcion;
-// 	}
 
-// 	public void setDescripcion(String descripcion) {
-// 		this.descripcion = descripcion;
-// 	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-// 	public String getImagen_producto() {
-// 		return imagen_producto;
-// 	}
 
-// 	public void setImagen_producto(String imagen_producto) {
-// 		this.imagen_producto = imagen_producto;
-// 	}
+    public String getTipo() {
+        return tipo;
+    }
 
-// 	public int getCantidad_stock() {
-// 		return cantidad_stock;
-// 	}
 
-// 	public void setCantidad_stock(int cantidad_stock) {
-// 		this.cantidad_stock = cantidad_stock;
-// 	}
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
 
-// 	public float getPrecio() {
-// 		return precio;
-// 	}
 
-// 	public void setPrecio(float precio) {
-// 		this.precio = precio;
-// 	}
+    public String getDescripcion() {
+        return descripcion;
+    }
 
-// 	public boolean isActivo() {
-// 		return activo;
-// 	}
 
-// 	public void setActivo(boolean activo) {
-// 		this.activo = activo;
-// 	}
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 
-// 	public List<Articulo_carrito> getArticulo_carritos() {
-// 		return articulo_carritos;
-// 	}
 
-// 	public void setArticulo_carritos(List<Articulo_carrito> articulo_carritos) {
-// 		this.articulo_carritos = articulo_carritos;
-// 	}
+    public String getImagen() {
+        return imagen;
+    }
 
-	
-// }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
+
+    public int getCantidad_stock() {
+        return cantidad_stock;
+    }
+
+
+    public void setCantidad_stock(int cantidad_stock) {
+        this.cantidad_stock = cantidad_stock;
+    }
+
+
+    public float getPrecio() {
+        return precio;
+    }
+
+
+    public void setPrecio(float precio) {
+        this.precio = precio;
+    }
+
+
+    public String getEstado() {
+        return estado;
+    }
+
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+
+    public List<Detalle_carrito> getDetalle_carritos() {
+        return detalle_carritos;
+    }
+
+
+    public void setDetalle_carritos(List<Detalle_carrito> detalle_carritos) {
+        this.detalle_carritos = detalle_carritos;
+    }
+
+
+    
+    
+}

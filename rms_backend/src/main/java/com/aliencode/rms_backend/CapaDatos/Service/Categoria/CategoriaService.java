@@ -1,19 +1,19 @@
-// package com.aliencode.rms_backend.CapaDatos.Service.Categoria;
+package com.aliencode.rms_backend.CapaDatos.Service.Categoria;
 
+import java.util.List;
 
-// import java.util.List;
+import com.aliencode.rms_backend.CapaDatos.Entity.Categoria;
 
-// import com.aliencode.rms_backend.CapaDatos.Entity.Categoria_producto;
+public interface CategoriaService{
 
-// public interface CategoriaService{
+    Categoria agregarCategoria(Categoria categoria);
 
-//     Categoria_producto agregarCategoria(Categoria_producto categoria_producto);
+    Categoria actualizarCategoria(Categoria categoria);
 
-//     CategoriaService actualizarCategoria(Categoria_producto categoria_producto);
+    List<Categoria> obtenerCategorias();
 
-//     List<Categoria_producto> obtenerCategoria();
+    Categoria obtenerCategoria(Integer id_categoria);
 
-//     CategoriaService obtenerCategoria(Integer id_categoria_producto);
-
-//     void eliminarCategoria(Integer id_categoria_producto);
-// }
+    void eliminarCategoria(Integer id_categoria);
+}
+ 

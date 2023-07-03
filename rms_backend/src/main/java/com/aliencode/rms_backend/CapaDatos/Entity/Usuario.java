@@ -14,7 +14,6 @@ import com.aliencode.rms_backend.CapaLogica.Security.Entity.Authority;
 import java.util.Collection;
 
 
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -36,14 +35,18 @@ public class Usuario implements UserDetails{
     
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "usuario")
     @JsonIgnore
-    private List<UsuarioRol> usuarioRoles;
+    private List<UsuarioRol> usuarioRoles = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
+    @JsonIgnore
+    private List<Carrito> carritos = new ArrayList<>();
 
     public Usuario(){
-        usuarioRoles = new ArrayList<>();
+        
     }
 
     public Usuario(int id, String username, String password, String cedula, String nombres, String apellidos,
-            Date fecha_nac, String telefono, String email, List<UsuarioRol> usuarioRoles) {
+            Date fecha_nac, String telefono, String email, List<UsuarioRol> usuarioRoles, List<Carrito> carritos) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -54,7 +57,9 @@ public class Usuario implements UserDetails{
         this.telefono = telefono;
         this.email = email;
         this.usuarioRoles = usuarioRoles;
+        this.carritos = carritos;
     }
+
 
     public int getId() {
         return id;
@@ -163,5 +168,13 @@ public class Usuario implements UserDetails{
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public List<Carrito> getCarritos() {
+        return carritos;
+    }
+
+    public void setCarritos(List<Carrito> carritos) {
+        this.carritos = carritos;
     }
 }

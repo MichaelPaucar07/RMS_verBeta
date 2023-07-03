@@ -9,6 +9,10 @@ import { clienteGuard } from './services/cliente/cliente.guard';
 import { AdminGuard } from './services/admin/admin.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
+import { ViewCategoriasComponent } from './pages/admin/view-categorias/view-categorias.component';
+import { AddCategoriasComponent } from './pages/admin/add-categorias/add-categorias.component';
+import { ViewProductosComponent } from './pages/admin/view-productos/view-productos.component';
+import { AddProductoComponent } from './pages/admin/add-producto/add-producto.component';
 
 //CONFIG DE RUTAS
 const routes: Routes = [
@@ -36,9 +40,26 @@ const routes: Routes = [
       {
         path:'profile',
         component: ProfileComponent 
-      },{
+      },
+      {
         path:'',
         component: WelcomeComponent
+      },
+      {
+        path:'categorias',
+        component: ViewCategoriasComponent
+      },
+      {
+        path:'add-categoria',
+        component: AddCategoriasComponent
+      },
+      {
+        path:'productos',
+        component: ViewProductosComponent
+      },
+      {
+        path:'add-productos',
+        component: AddProductoComponent
       }
     ]
   },

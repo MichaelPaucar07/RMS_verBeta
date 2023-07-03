@@ -1,14 +1,16 @@
-// package com.aliencode.rms_backend.CapaDatos.Repository;
+package com.aliencode.rms_backend.CapaDatos.Repository;
 
-// import java.util.List;
-// import org.springframework.data.jpa.repository.JpaRepository;
-// import com.aliencode.rms_backend.CapaDatos.Entity.Categoria_producto;
-// import com.aliencode.rms_backend.CapaDatos.Entity.Producto;
+import java.util.List;
 
-// public interface ProductoRepositorio extends JpaRepository<Producto, Integer>{
-//     List<Producto> findByCategoria(Categoria_producto categoria_producto);
+import org.springframework.data.jpa.repository.JpaRepository;
 
-//     List<Producto> findByActivo(Boolean estado);
+import com.aliencode.rms_backend.CapaDatos.Entity.Categoria;
+import com.aliencode.rms_backend.CapaDatos.Entity.Producto;
 
-//     List<Producto> findByCategoriaAndActivo(Categoria_producto categoria_producto,Boolean estado);
-// }
+public interface ProductoRepositorio extends JpaRepository<Producto, Integer>{
+    List<Producto> findByCategoria(Categoria categoria);
+
+    List<Producto> findByEstado(String estado);
+
+    List<Producto> findByCategoriaAndEstado(Categoria categoria,String estado);
+}

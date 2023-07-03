@@ -1,0 +1,57 @@
+
+<mat-card class="mt10" >
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+    </mat-card-header>
+    <h2 class="text-center">LISTA DE PRODUCTOS</h2>
+  <mat-card-content>
+    <div class="container mt20">
+      <button class="btn btn-success"routerLink="/admin/add-productos">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+    <mat-card-actions>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Categoría</th>
+            <th>Stock</th>
+            <th>Descripcion</th>
+            <th>Estado</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let producto of productos">
+            <td>
+              <img [src]="producto.imagen" alt="Imagen del Producto" width="150" height="150">
+            </td>
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.categoria.nombre_categoria }}</td>
+            <td>{{ producto.cantidad_stock }}</td>
+            <td>{{ producto.descripcion }}</td>
+            <td>{{ producto.precio }} $</td>
+            <td>{{ producto.estado }}</td>
+            <td>
+              <button class="btn btn-primary">
+                <i class="fas fa-edit"></i> <!-- Icono de editar -->
+              </button>
+              <button class="btn btn-danger" >
+                <i class="fas fa-trash"></i> <!-- Icono de eliminar -->
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- <button mat-flat-button color="primary" [routerLink] = "'/admin/ver-preguntas/'+e.examenId+'/'+e.titulo">Preguntas</button>
+      <button mat-stroked-button color="primary" class="ml20">Precio Maximo {{ e.cantidad_stock }}</button>
+      <button mat-stroked-button color="primary" class="ml20">Preguntas {{ e.numeroDePreguntas }}</button>
+      <button [routerLink] = "'/admin/examen/'+e.examenId" mat-flat-button color="primary" class="ml20">Actualizar</button>
+      <button mat-flat-button color="warn" class="ml10">Eliminar</button> -->
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>
+  

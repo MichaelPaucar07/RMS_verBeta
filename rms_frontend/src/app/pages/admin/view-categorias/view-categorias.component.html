@@ -1,0 +1,15 @@
+<mat-card>
+    <mat-nav-list>
+      <h3 mat-subheader>LISTA DE CATEGORIAS</h3>
+      <ng-container *ngFor="let c of categorias">
+        <a mat-list-item>
+          <mat-icon mat-list-icon>bubble_chart</mat-icon>
+          <span mat-line class="category-name">{{ c.nombre_categoria }}</span>
+        </a>
+      </ng-container>
+    </mat-nav-list>
+  
+    <div class="container text-center mt-3">
+      <button mat-raised-button color="primary" routerLink="/admin/add-categoria">Agregar categoría</button>
+    </div>
+  </mat-card>

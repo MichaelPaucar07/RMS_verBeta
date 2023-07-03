@@ -28,6 +28,10 @@ import { FooterComponent } from './componets/footer/footer.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
+import { ViewCategoriasComponent } from './pages/admin/view-categorias/view-categorias.component';
+import { AddCategoriasComponent } from './pages/admin/add-categorias/add-categorias.component';
+import { ViewProductosComponent } from './pages/admin/view-productos/view-productos.component';
+import { AddProductoComponent } from './pages/admin/add-producto/add-producto.component';
 
 
 
@@ -44,6 +48,10 @@ import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
     ProfileComponent,
     SidebarComponent,
     WelcomeComponent,
+    ViewCategoriasComponent,
+    AddCategoriasComponent,
+    ViewProductosComponent,
+    AddProductoComponent,
   ],
   imports: [
     BrowserModule,
