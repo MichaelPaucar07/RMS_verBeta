@@ -55,4 +55,9 @@ public class UsuarioController {
         usuarioService.eliminarUsuario(id);
     }
 
+    @GetMapping("/listaUsers")
+    public List<Usuario> listarUsuarios() {
+        return usuarioService.listarUsuarios();
+    }
+
 }

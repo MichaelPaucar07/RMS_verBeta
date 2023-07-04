@@ -28,28 +28,28 @@ export class ViewProductosComponent implements OnInit{
     
   }
 
-  // eliminarExamen(examenId:any){
-  //   Swal.fire({
-  //     title:'Eliminar examen',
-  //     text:'¿Estás seguro de eliminar el examen?',
-  //     icon:'warning',
-  //     showCancelButton:true,
-  //     confirmButtonColor:'#3085d6',
-  //     cancelButtonColor:'#d33',
-  //     confirmButtonText:'Eliminar',
-  //     cancelButtonText:'Cancelar'
-  //   }).then((result) => {
-  //     if(result.isConfirmed){
-  //       this.examenService.eliminarExamen(examenId).subscribe(
-  //         (data) => {
-  //           this.examenes = this.examenes.filter((examen:any) => examen.examenId != examenId);
-  //           Swal.fire('Examen eliminado','El examen ha sido eliminado de la base de datos','success');
-  //         },
-  //         (error) => {
-  //           Swal.fire('Error','Error al eliminar el examen','error');
-  //         }
-  //       )
-  //     }
-  //   })
-  // }
+  eliminarProducto(productoId:any){
+    Swal.fire({
+      title:'Eliminar producto',
+      text:'¿Estás seguro de eliminar el producto?',
+      icon:'warning',
+      showCancelButton:true,
+      confirmButtonColor:'#3085d6',
+      cancelButtonColor:'#d33',
+      confirmButtonText:'Eliminar',
+      cancelButtonText:'Cancelar'
+    }).then((result) => {
+      if(result.isConfirmed){
+        this.productoService.eliminarProducto(productoId).subscribe(
+          (data) => {
+            this.productos = this.productos.filter((producto:any) => producto.id_producto!= productoId);
+            Swal.fire('Examen eliminado','El producto ha sido eliminado de la base de datos','success');
+          },
+          (error) => {
+            Swal.fire('Error','Error al eliminar el producto','error');
+          }
+        )
+      }
+    })
+  }
 }

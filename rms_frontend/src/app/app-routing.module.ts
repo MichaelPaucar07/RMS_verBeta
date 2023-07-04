@@ -13,6 +13,8 @@ import { ViewCategoriasComponent } from './pages/admin/view-categorias/view-cate
 import { AddCategoriasComponent } from './pages/admin/add-categorias/add-categorias.component';
 import { ViewProductosComponent } from './pages/admin/view-productos/view-productos.component';
 import { AddProductoComponent } from './pages/admin/add-producto/add-producto.component';
+import { EditProductoComponent } from './pages/admin/edit-producto/edit-producto.component';
+import { ViewClientesComponent } from './pages/admin/view-clientes/view-clientes.component';
 
 //CONFIG DE RUTAS
 const routes: Routes = [
@@ -54,12 +56,20 @@ const routes: Routes = [
         component: AddCategoriasComponent
       },
       {
-        path:'productos',
+        path:'view-productos',
         component: ViewProductosComponent
       },
       {
         path:'add-productos',
         component: AddProductoComponent
+      },
+      {
+        path:'edit-productos/:id_producto',
+        component: EditProductoComponent
+      },
+      {
+        path:'view-clientes',
+        component: ViewClientesComponent
       }
     ]
   },

@@ -50,4 +50,9 @@ public class UsuarioServiceImpl implements UsuarioService{
     public void eliminarUsuario(int id) {
         usuarioRepositorio.deleteById(id);
     }
+
+    @Override
+    public List<Usuario> listarUsuarios() {
+        return usuarioRepositorio.findAll();
+    }
 }

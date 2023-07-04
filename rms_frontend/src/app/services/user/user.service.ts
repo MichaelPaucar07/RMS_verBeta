@@ -11,4 +11,8 @@ export class UserService {
   public añadirUsuario(user:any){
     return this.httpClient.post(`${baseUrl}/usuarios/`, user);
   }
+
+  public listarUsuarios(){
+    return this.httpClient.get(`${baseUrl}/usuarios/listaUsers`);
+  }
 }

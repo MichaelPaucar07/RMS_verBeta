@@ -36,21 +36,16 @@
             <td>{{ producto.precio }} $</td>
             <td>{{ producto.estado }}</td>
             <td>
-              <button class="btn btn-primary">
+              <button class="btn btn-primary" [routerLink]="['/admin/edit-productos', producto.id_producto]">
                 <i class="fas fa-edit"></i> <!-- Icono de editar -->
               </button>
-              <button class="btn btn-danger" >
+              <button class="btn btn-danger"  (click) = "eliminarProducto(producto.id_producto)" >
                 <i class="fas fa-trash"></i> <!-- Icono de eliminar -->
               </button>
             </td>
           </tr>
         </tbody>
       </table>
-      <!-- <button mat-flat-button color="primary" [routerLink] = "'/admin/ver-preguntas/'+e.examenId+'/'+e.titulo">Preguntas</button>
-      <button mat-stroked-button color="primary" class="ml20">Precio Maximo {{ e.cantidad_stock }}</button>
-      <button mat-stroked-button color="primary" class="ml20">Preguntas {{ e.numeroDePreguntas }}</button>
-      <button [routerLink] = "'/admin/examen/'+e.examenId" mat-flat-button color="primary" class="ml20">Actualizar</button>
-      <button mat-flat-button color="warn" class="ml10">Eliminar</button> -->
     </mat-card-actions>
   </mat-card-content>
 </mat-card>

@@ -33,6 +33,9 @@ import { AddCategoriasComponent } from './pages/admin/add-categorias/add-categor
 import { ViewProductosComponent } from './pages/admin/view-productos/view-productos.component';
 import { AddProductoComponent } from './pages/admin/add-producto/add-producto.component';
 import { MatSelectModule } from '@angular/material/select';
+import { EditProductoComponent } from './pages/admin/edit-producto/edit-producto.component';
+import { ViewClientesComponent } from './pages/admin/view-clientes/view-clientes.component';
+import { CarritoComprasComponent } from './pages/user/carrito-compras/carrito-compras.component';
 
 
 
@@ -53,6 +56,9 @@ import { MatSelectModule } from '@angular/material/select';
     AddCategoriasComponent,
     ViewProductosComponent,
     AddProductoComponent,
+    EditProductoComponent,
+    ViewClientesComponent,
+    CarritoComprasComponent,
   ],
   imports: [
     BrowserModule,

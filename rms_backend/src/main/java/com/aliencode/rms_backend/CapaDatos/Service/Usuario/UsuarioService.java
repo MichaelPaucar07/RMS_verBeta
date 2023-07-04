@@ -9,4 +9,5 @@ public interface UsuarioService{
     public Usuario guardarUsuario(Usuario usuario, List<UsuarioRol> usuarioRoles) throws Exception;
     public Usuario obtenerUsuario(String usernmae);
     public void eliminarUsuario(int id);
+    List<Usuario> listarUsuarios();
 }
