@@ -36,6 +36,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { EditProductoComponent } from './pages/admin/edit-producto/edit-producto.component';
 import { ViewClientesComponent } from './pages/admin/view-clientes/view-clientes.component';
 import { CarritoComprasComponent } from './pages/user/carrito-compras/carrito-compras.component';
+import { ListProductosComponent } from './pages/user/list-productos/list-productos.component';
 
 
 
@@ -59,6 +60,7 @@ import { CarritoComprasComponent } from './pages/user/carrito-compras/carrito-co
     EditProductoComponent,
     ViewClientesComponent,
     CarritoComprasComponent,
+    ListProductosComponent,
   ],
   imports: [
     BrowserModule,

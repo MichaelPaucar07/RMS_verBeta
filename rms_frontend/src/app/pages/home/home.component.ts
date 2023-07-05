@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-
+  expandButton() {
+    const button = document.querySelector('.button');
+    button?.classList.add('expanded');
+    setTimeout(() => {
+      button?.classList.remove('expanded');
+    }, 1000);
+  }
 }

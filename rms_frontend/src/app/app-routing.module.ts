@@ -15,6 +15,7 @@ import { ViewProductosComponent } from './pages/admin/view-productos/view-produc
 import { AddProductoComponent } from './pages/admin/add-producto/add-producto.component';
 import { EditProductoComponent } from './pages/admin/edit-producto/edit-producto.component';
 import { ViewClientesComponent } from './pages/admin/view-clientes/view-clientes.component';
+import { ListProductosComponent } from './pages/user/list-productos/list-productos.component';
 
 //CONFIG DE RUTAS
 const routes: Routes = [
@@ -76,8 +77,14 @@ const routes: Routes = [
   {
     path:'user-dashboard',
     component:UserDashboardComponent,
-    pathMatch:'full',
-    canActivate:[clienteGuard]
+    canActivate:[clienteGuard],
+    children:[
+      {
+        path:'list-productos',
+        component: ListProductosComponent
+      },
+
+    ]
   }
 ];
 

@@ -1,23 +1,11 @@
-<div class="text-center">
-    <h2>Artículo</h2>
-    <img src="../../../assets/im.png" alt="Imagen del artículo 1" width="300" height="400">
-    
-    <div class="cantidad">
-      <label>Cantidad:</label>
-      <input type="number" >
+<div class="welcome-container">
+  <h1 class="welcome-title">¡Bienvenido a la Tienda de Cartas Mágicas!</h1>
+  <div class="card-container">
+    <div class="card">
+      <div class="card-front"></div>
+      <div class="card-back"></div>
     </div>
-  
-    <button >Agregar al carrito</button>
   </div>
   
-  <div class="text-center">
-    <h2>Artículo</h2>
-    <img src="../../../assets/im2.webp" alt="Imagen del artículo 2" width="300" height="400">
-    
-    <div class="cantidad">
-      <label>Cantidad:</label>
-      <input >
-    </div>
-  
-    <button >Agregar al carrito</button>
-  </div>
+  <button class="button" (click)="expandButton()" routerLink="/login" >Descubre más</button>
+</div>
